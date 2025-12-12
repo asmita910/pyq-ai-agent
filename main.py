@@ -5,8 +5,10 @@ from progress_tracker import mark_pdf_processed, add_fact_learned
 pdf_path = "data/pyq_pdfs/2024.pdf"
 
 text = extract_text_from_pdf(pdf_path)
-facts = extract_facts_from_text(text)
-
+#facts = extract_facts_from_text(text)
+facts = extract_facts_from_text(text, topic="Polity")
+for i, f in enumerate(facts[:10], 1):
+    print(f"{i}. {f}")
 # Mark PDF processed
 mark_pdf_processed(pdf_path)
 
